@@ -53,7 +53,7 @@ INSERT INTO products (product, price) VALUES
 			panic(err)
 		}
 		fio := strings.Join(fields[:3], " ")
-		vals = append(vals, fmt.Sprintf("('%s','%s','%s','%s')", fio, t.Format("20060102"), fields[4], fields[5]))
+		vals = append(vals, fmt.Sprintf("('%s','%s','%s','%s')", fio, fields[4], t.Format("20060102"), fields[5]))
 	}
 	sqlFile += "INSERT INTO clients (fio, login, birthday, email) VALUES\n"
 	sqlFile += strings.Join(vals, ",\n") + ";\n"
